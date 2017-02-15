@@ -1,0 +1,59 @@
+<ion-view class="dywos login" hide-nav-bar="true">
+  <!-- do you want padding? -->
+  <ion-content class="padding">
+
+    <ion-spinner ng-if="data.loading" class="spinner-on-load"></ion-spinner>
+   
+        <div class="" style="margin-top: 10px;">  
+          <img src="main/assets/images/logo.png" />
+        </div>
+        <div class="row responsive-sm">
+          <div class="form-wrapper" style="margin-top: 25px;">
+
+            <form id="loginForm" name="LoginForm" schema="Login" validation-schema>
+              
+                <ion-input class="item item-input">
+                  <input aria-label="Ingrese su email" message-id="email-message-error" name="email" ng-model="user.email" placeholder="{{'login.username' | translate}}" type="text"/>
+                </ion-input>
+                <ion-input class="item item-input">
+                  <input aria-label="Ingrese su contraseña" message-id="password-message-error" name="password" ng-model="user.password" placeholder="{{'login.password' | translate}}" type="password" maxlength="8"/>
+                </ion-input>                
+
+                <div class="center" style="margin: 10px;">
+                    <a href="#" ui-sref="app.forgot-password"><h5>{{'login.forgotpassword' | translate}}</h5></a>                
+                </div>
+                <div class="row" style="padding: 0px;">
+                  <div class="col col-25"  style="padding: 0px;"></div>
+                <div class="center col col-50"  style="padding: 0px;">
+                    <ion-toggle ng-model="user.remember" toggle-class="toggle-balanced">{{'login.rememberme' | translate}}</ion-toggle>
+                </div>
+                <div class="col col-25"  style="padding: 0px;"></div>
+              </div>
+                
+              <div class="center">    
+                <button ng-click="login(user, LoginForm)" class="button button-full button-outline button-assertive" type="submit" validation-submit="LoginForm"> {{'login.login' | translate}}</button>
+              </div>             
+            </form>
+            <br/>
+            <div class="center" style="padding: 0px;">
+              <h5 style="color: #FFFFFF"> {{'login.startsession' | translate}}</h5>
+              <div class="row"  style="padding: 0px;">
+                <div class="col col-10"  style="padding: 0px;">&nbsp;</div>
+                <div class="col col-33"  style="padding: 0px;">
+                  <button class="button button-full button-outline button-positive icon-center ion-social-facebook"  ng-click="facebookSignIn()"></button>
+                </div>
+                <div class="col" style="padding: 0px;">&nbsp;</div>
+                <div class="col col-33"  style="padding: 0px;">
+                  <button class="button button-full button-outline button-assertive ion-social-googleplus" ng-click="googleSignIn()" style="color: #ef473a;">&nbsp;</button>
+                </div>
+                <div class="col col-10"  style="padding: 0px;">&nbsp;</div>
+              </div>
+            </div>
+            <div class="center">
+              <h5> {{'login.needaccount' | translate}}</h5>
+              <button  ui-sref="app.register" class="button button-full button-outline button-calm ">{{'login.register' | translate}}</button>
+            </div>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

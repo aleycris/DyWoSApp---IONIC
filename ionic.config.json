@@ -1,0 +1,13 @@
+{
+  "name": "DyWos",
+  "app_id": "com.dywos.app",
+  "documentRoot": "app",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "app/**/*",
+    "!app/lib/**/*"
+  ]
+}
