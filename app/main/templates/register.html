@@ -20,25 +20,29 @@
               <input type="text" placeholder="{{'register.lastname' | translate}}"  name="lastName" ng-model="user.lastName" required>
             </label>
             <label class="item item-input split-view-input">
-              <ion-radio ng-model="choice" ng-value="'M'">{{'register.sex.male' | translate}}</ion-radio>&nbsp;
-              <ion-radio ng-model="choice" ng-value="'F'">{{'register.sex.female' | translate}}</ion-radio>
+              <div class="button-bar padding">
+                <a grouped-radio="'M'" ng-model="user.gender">{{'register.gender.male' | translate}}</a>
+                <a grouped-radio="'F'" ng-model="user.gender">{{'register.gender.female' | translate}}</a>
+              </div>
             </label>
             <label class="item item-input">
               <input type="email" placeholder="{{'register.email' | translate}}" name="email" ng-model="user.email" required>
             </label>
             <label class="item item-input">
-              <input type="date" placeholder="{{'register.birthdate' | translate}}" name="email" ng-model="user.birthdate" required>
+              <input type="date" placeholder="{{'register.birthdate' | translate}}" name="birthdate" ng-model="user.birthdate" required >
+              <input datepicker-popup is-open="focus" ng-focus="openDatePicker()" />
             </label>
             <label class="item item-input">
-              <input type="text" placeholder="{{'register.username' | translate}}" name="email" ng-model="user.username" required>
+              <input type="text" placeholder="{{'register.username' | translate}}" name="username" ng-model="user.username" required>
             </label>
             <label class="item item-input">
-              <input type="password" placeholder="{{'register.password' | translate}}" name="email" ng-model="user.password" required show-hide-input>
+              <input type="password" placeholder="{{'register.password' | translate}}" name="password" ng-model="user.password" required show-hide-input>
             </label>
             <label class="item item-input">
-              <input type="password" placeholder="{{'register.password.confirm' | translate}}" name="email" required show-hide-input>
+              <input type="password" placeholder="{{'register.password.confirm' | translate}}" name="passwordConfirm" required show-hide-input>
             </label>          
           </div>
+          <!--
           <p ng-if="error" class="message error"> {{error}}</p>
           <div class="error-container" 
             ng-if="(signUpForm.password.$invalid || emailForm.password.$error.minlength || signUpForm.email.$invalid || signUpForm.firstName.$invalid || signUpForm.lastName.$invalid) && signUpForm.submitted">
@@ -59,17 +63,13 @@
                     {{'LASTREQ' | translate}}
             </small>
           </div>
-          <button type="submit" class="sign-up button button-block" ng-class="{'pseudo-disabled':signUpForm.$invalid}">
-            {{'SUBMIT' | translate}}
+          -->
+          <button type="submit" class="button button-full button-calm" ng-class="{'pseudo-disabled':signUpForm.$invalid}">
+            {{'register.register' | translate}}
           </button>
-          <div class="alternative-action">
-            <a class="" ui-sref="app.login">
-              {{'HAVEACCOUNT' | translate}} <span>{{'LOGIN' | translate}}</span>
-            </a>
-          </div>
+         
         </form>
       </div>
     </div>
-    <section ng-include="'templates/login/partials/legal-notice.html'"></section>
   </ion-content>
 </ion-view>

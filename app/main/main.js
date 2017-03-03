@@ -11,7 +11,10 @@ angular.module('main', [
   'base64',
   'validation',
   'validation.rule',
-  'validation.schema'
+  'validation.schema',
+  'ionic-datepicker',
+  'ionic-datepicker.provider',
+  'ionic-datepicker.service'
     // TODO: load other modules selected during generation
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
@@ -44,7 +47,7 @@ angular.module('main', [
       views: {
         'app-view': {
           templateUrl: 'main/templates/register.html',
-          controller: 'LoginCtrl'
+          controller: 'RegisterCtrl'
         }
       }
     })

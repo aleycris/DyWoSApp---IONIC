@@ -49,6 +49,13 @@ input:-ms-input-placeholder { /* IE10+ */
 .button.button-calm.button-outline {
     color: #FFFFFF;
 }
+.button.button-calm {
+    color: #FFFFFF;
+    border-color: #00ADEE;
+}
+.button.button-calm:hover {
+   border-color: #00ADEE;
+}
 .pane{
     background-color: #F4F4F4;
 }
@@ -78,6 +85,16 @@ input:-ms-input-placeholder { /* IE10+ */
     border: none;
     background-color: transparent;
     color: #7A8189;
+}
+.button-bar > .button{
+  border: 1px solid #cfcfcf;
+}
+
+.button-bar > .button:last-child {
+  border-radius: 0px 20px 20px 0px !important;
+}
+.button-bar > .button:first-child {
+    border-radius: 20px 0px 0px 20px !important;
 }
 
 
